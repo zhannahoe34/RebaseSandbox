@@ -5,6 +5,8 @@ def restock(stock: dict[str, int], item: str, qty: int) -> dict[str, int]:
     """Add qty units of item to stock."""
     if qty <= 0:
         raise ValueError("qty must be positive")
+    if not item:
+        raise ValueError("item name required")
     stock[item] = stock.get(item, 0) + qty
     return stock
 
