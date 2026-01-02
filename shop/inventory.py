@@ -13,6 +13,6 @@ def reserve(stock: dict[str, int], item: str, qty: int) -> dict[str, int]:
     """Remove qty units of item from stock for an order."""
     available = stock.get(item, 0)
     if qty > available:
-        raise ValueError(f"only {available} {item} left")
+        raise ValueError(f"short by {qty - available} {item}")
     stock[item] = available - qty
     return stock
