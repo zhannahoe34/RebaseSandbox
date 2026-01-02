@@ -9,6 +9,8 @@ def restock(stock: dict[str, int], item: str, qty: int) -> dict[str, int]:
         raise ValueError("qty must be positive")
     if qty > MAX_RESTOCK:
         raise ValueError(f"qty must be at most {MAX_RESTOCK}")
+    if not item:
+        raise ValueError("item name required")
     stock[item] = stock.get(item, 0) + qty
     return stock
 
