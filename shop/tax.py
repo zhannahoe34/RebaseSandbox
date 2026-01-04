@@ -6,5 +6,6 @@ def tax_for(region: str) -> float:
     rates = {
         "US": 0.07,
         "EU": 0.2,
+        "UK": 0.2,
     }
     return rates.get(region, 0.0)
